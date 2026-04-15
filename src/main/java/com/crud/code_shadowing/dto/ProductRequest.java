@@ -1,0 +1,15 @@
+package com.crud.code_shadowing.dto;
+
+import jakarta.validation.constraints.*;
+import lombok.*;
+
+@Getter
+@NoArgsConstructor
+public class ProductRequest {
+    @NotBlank(message = "상품 이름은 필수입니다.")
+    private String name;
+
+    @NotNull(message = "가격은 필수입니다.")
+    @Min(value = 0, message = "가격은 0원 이상이어야 합니다.")
+    private Integer price;
+}
